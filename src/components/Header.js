@@ -5,6 +5,7 @@ function Header() {
     const hSectionStyles = {
         width: '100%',
         textAlign: 'center',
+        marginBottom: '25px',
     }
 
     return (
