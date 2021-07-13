@@ -13,6 +13,14 @@ function Form() {
         marginBottom: '15px',
     }
 
+    // span
+    const spanStyles = {
+        display: 'block',
+        color: 'red',
+    }
+
+
+
     // button div styles
     const bDivStyles = {
         width: '250px',
@@ -30,14 +38,15 @@ function Form() {
 
     // event handlers
     const submitHandler = event => {
+        const formMessage = document.querySelector(".form-message");
+        event.preventDefault();
         if (isNaN(zipCode) || zipCode === "00000") {
-            event.preventDefault();
-            alert(`A Zip Code must be a valid number`);
+            formMessage.innerText = `A Zip Code must be a valid number`;
         } else if (zipCode.length !== 5) {
-            event.preventDefault();
-            alert(`A Zip Code must be five numbers long`);
+            formMessage.innerText = `A Zip Code must be five numbers long`;
         } else {
-            alert(`Form Successfully Submitted`);
+            formMessage.innerText =`Form Successfully Submitted`;
+            formMessage.style.color = `green`;
         }
     }
 
@@ -51,6 +60,7 @@ function Form() {
                     value={zipCode}
                     onChange={event => setZipCode(event.target.value)}
                 />
+                <span style={spanStyles} className="form-message"></span>
             </div>
             <div style={bDivStyles}><button style={buttonStyles} type="submit">Get Weather</button></div>
         </form>
