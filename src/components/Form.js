@@ -28,8 +28,21 @@ function Form() {
     // state
     const [zipCode, setZipCode] = useState("");
 
+    // event handlers
+    const submitHandler = event => {
+        if (isNaN(zipCode) || zipCode === "00000") {
+            event.preventDefault();
+            alert(`A Zip Code must be a valid number`);
+        } else if (zipCode.length !== 5) {
+            event.preventDefault();
+            alert(`A Zip Code must be five numbers long`);
+        } else {
+            alert(`Form Successfully Submitted`);
+        }
+    }
+
     return (
-        <form style={formStyles}>
+        <form onSubmit={submitHandler} style={formStyles}>
             <div style={fDivStyles}>
                 <label htmlFor="zip">Zip Code: &nbsp;</label>
                 <input 
