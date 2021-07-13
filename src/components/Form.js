@@ -19,8 +19,6 @@ function Form() {
         color: 'red',
     }
 
-
-
     // button div styles
     const bDivStyles = {
         width: '250px',
