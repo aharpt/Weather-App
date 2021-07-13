@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 function Form() {
 
@@ -25,13 +25,20 @@ function Form() {
         float: 'right',
     }
 
+    // state
+    const [zipCode, setZipCode] = useState("");
+
     return (
         <form style={formStyles}>
             <div style={fDivStyles}>
                 <label htmlFor="zip">Zip Code: &nbsp;</label>
-                <input id="zip" type="text" />
+                <input 
+                    id="zip"
+                    type="text"
+                    value={zipCode}
+                    onChange={event => setZipCode(event.target.value)}
+                />
             </div>
-
             <div style={bDivStyles}><button style={buttonStyles} type="submit">Get Weather</button></div>
         </form>
     )
