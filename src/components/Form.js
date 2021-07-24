@@ -59,6 +59,11 @@ function Form() {
         } else {
             formMessage.innerText =`Form Successfully Submitted`;
             formMessage.style.color = `green`;
+
+            setTimeout(() => {
+                formMessage.innerText =``; 
+            }, 2000)
+
             getWeather(zipCode);
         }
     }
