@@ -60,7 +60,6 @@ function Form() {
             formMessage.innerText =`Form Successfully Submitted`;
             formMessage.style.color = `green`;
             getWeather(zipCode);
-            // setZipCode("");
         }
     }
 
@@ -83,10 +82,8 @@ function Form() {
         <section id="weather-info">
             {data !== {} ? 
             <>
-            
             <h3>{data.name}</h3>
-            {data.main !== undefined ? <p>Current Temp: {data.main.temp}&deg;F</p> : ""}
-            {data.weather !== undefined ? <p>Current Weather: {data.weather[0].main} - {data.weather[0].description}</p> : ""}
+            {data.main !== undefined ? <span>Current Weather: {data.main.temp}&deg;F | {data.weather[0].description}</span> : ""}
             </>
             : error
             }
