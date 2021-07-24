@@ -60,6 +60,7 @@ function Form() {
             formMessage.innerText =`Form Successfully Submitted`;
             formMessage.style.color = `green`;
             getWeather(zipCode);
+            // setZipCode("");
         }
     }
 
@@ -71,6 +72,7 @@ function Form() {
                 <input 
                     id="zip"
                     type="text"
+                    autoComplete="off"
                     value={zipCode}
                     onChange={event => setZipCode(event.target.value)}
                 />
