@@ -34,6 +34,11 @@ function Form() {
     // state
     const [zipCode, setZipCode] = useState("");
 
+    // API call
+    const getWeather = zipCode => {
+        
+    }
+
     // event handlers
     const submitHandler = event => {
         const formMessage = document.querySelector(".form-message");
