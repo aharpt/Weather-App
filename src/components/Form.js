@@ -37,9 +37,9 @@ function Form() {
 
     // API call
     const getWeather = zipCode => {
-        axios.get(`api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&appid=ab1391038d946894c84bf12f11e666f0`)
+        axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${zipCode},us&units=imperial&appid=ab1391038d946894c84bf12f11e666f0`)
         .then(response => {
-            console.log(response);
+            console.log(response.data);
         })
         .catch(error => {
             console.log(error);
