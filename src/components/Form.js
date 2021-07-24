@@ -64,6 +64,7 @@ function Form() {
     }
 
     return (
+        <>
         <form onSubmit={submitHandler} style={formStyles}>
             <div style={fDivStyles}>
                 <label htmlFor="zip">Zip Code: &nbsp;</label>
@@ -77,6 +78,18 @@ function Form() {
             </div>
             <div style={bDivStyles}><button style={buttonStyles} type="submit">Get Weather</button></div>
         </form>
+        <section id="weather-info">
+            {data !== {} ? 
+            <>
+            
+            <h3>{data.name}</h3>
+            {data.main !== undefined ? <p>Current Temp: {data.main.temp}&deg;F</p> : ""}
+            {data.weather !== undefined ? <p>Current Weather: {data.weather[0].main} - {data.weather[0].description}</p> : ""}
+            </>
+            : error
+            }
+        </section>
+        </>
     )
 }
 
